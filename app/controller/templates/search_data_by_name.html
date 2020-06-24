@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+function del(){
+if(!confirm("确认要删除？")){
+window.event.returnValue = false;
+}
+}
+</script>
+</head>
+<body><font size="5">
+    <h1>{{name}}</h1>
+    <form action="" method="post">
+        <button name="detect" value="detect">detect</button>
+    </form>
+
+    <a href="{% url 'delete_data' name %}" onclick="return del()">删除</a>
+    <div class="panel-body" style="height: 400px; overflow-y:scroll">
+            <div style="border: 1px  #000000; width: 90%;  margin: 0 auto;">
+                <span>
+                {% autoescape off %}{{ data }}{% endautoescape %}
+            </span>
+            </div>
+        </div>
+
+</body>
+</html>

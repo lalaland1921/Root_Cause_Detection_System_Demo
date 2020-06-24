@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>root cause detection</title>
+
+</head>
+<body><font size="5">
+    <h1>现有数据</h1>
+    <div class="panel-body" style="height: 400px; overflow-y:scroll">
+            <div style="border: 1px  #000000; width: 90%; margin: 0 auto;">
+                <span>
+                {% autoescape off %}{{ data }}{% endautoescape %}
+            </span>
+            </div>
+        </div>
+
+
+    <h1>载入数据</h1>
+    <form action="/ImportData/" method="post" enctype="multipart/form-data">
+    <p><input type="file" name="file"></p>
+    <p><input type="submit" value="submit"></p>
+</form>
+
+<a href="{% url 'search_all_table' %}"><b>search all table</b></a>
+<br>
+<a href="{% url 'data_download' %}"><b>download data</b></a>
+</font></body>
+</html>

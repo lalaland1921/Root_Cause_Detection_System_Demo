@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>载入数据信息</h1>
+<h2>{{msg}}</h2>
+<h2>data</h2>
+<p>table:{{data.tablename}}</p>
+<p>id:{{data.id}}</p>
+<p>timestamp:{{data.timestamp}}</p>
+<div class="panel-body" style="height: 400px; overflow-y:scroll">
+            <div style="border: 1px  #000000; width: 90%;  margin: 0 auto;">
+                <span>
+                {% autoescape off %}{{ data.data }}{% endautoescape %}
+            </span>
+            </div>
+        </div>
+</body>
+</html>
